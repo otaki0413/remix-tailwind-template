@@ -6,9 +6,14 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
-    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
-    "format": "prettier --cache -c .",
     "start": "remix-serve ./build/server/index.js",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "check:lint": "npm run lint",
+    "check:prettier": "prettier --check .",
+    "format": "prettier --cache -c .",
+    "fix": "npm run fix:lint && npm run fix:prettier",
+    "fix:lint": "npm run lint --fix",
+    "fix:prettier": "prettier --write .",
     "tsc": "tsc"
   },
   "dependencies": {
