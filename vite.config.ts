@@ -9,5 +9,14 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  plugins: [remix(), tsconfigPaths()],
+  plugins: [
+    remix({
+      basename: "/",
+      buildDirectory: "build",
+      future: {
+        /* any enabled future flags */
+      },
+    }),
+    tsconfigPaths(),
+  ],
 });
